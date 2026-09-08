@@ -25,7 +25,7 @@ class NetworkManager(private val context: Context) {
     
     companion object {
         // GANTI DENGAN URL VERCEL KAMU
-        const val API_BASE = "https://your-app.vercel.app/api"
+        const val API_BASE = "https://kontrolfixed-alfread.vercel.app/api"
     }
     
     fun registerDevice() {

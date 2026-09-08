@@ -39,41 +39,13 @@ class CommandExecutor(private val context: Context) {
     }
     
     private fun turnOffScreen(): String {
-        return try {
-            @Suppress("DEPRECATION")
-            powerManager.goToSleep(System.currentTimeMillis())
-            
-            // Alternatif: Set brightness ke 0
-            Settings.System.putInt(
-                context.contentResolver,
-                Settings.System.SCREEN_BRIGHTNESS,
-                0
-            )
-            
-            "Screen turned off"
-        } catch (e: Exception) {
-            "Failed to turn off screen: ${e.message}"
-        }
+        return "Screen control is not supported for a normal Android app"
     }
-    
+
     private fun turnOnScreen(): String {
-        return try {
-            @Suppress("DEPRECATION")
-            powerManager.wakeUp(System.currentTimeMillis())
-            
-            // Set brightness normal
-            Settings.System.putInt(
-                context.contentResolver,
-                Settings.System.SCREEN_BRIGHTNESS,
-                128
-            )
-            
-            "Screen turned on"
-        } catch (e: Exception) {
-            "Failed to turn on screen: ${e.message}"
-        }
+        return "Screen control is not supported for a normal Android app"
     }
-    
+
     private fun turnOnFlashlight(): String {
         return try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
